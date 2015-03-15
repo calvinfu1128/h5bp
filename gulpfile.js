@@ -3,7 +3,8 @@ var gulp = require('gulp'),
     minifyHTML = require('gulp-minify-html'),
     browserSync = require('browser-sync'),
     reload = browserSync.reload,
-    nib = require('nib');
+    nib = require('nib'),
+    rupture = require('rupture');
 
 // Scripts Task
 // Concat + Uglify + Rename + Gzip JS File
@@ -29,7 +30,7 @@ gulp.task('styles', function(){
     .pipe(plugins.sourcemaps.init())
     .pipe(plugins.concat('main.styl'))
     .pipe(plugins.stylus({
-      use: nib(),
+      use: [nib(), rupture()],
       compress: true
     }))
     .pipe(plugins.autoprefixer('last 2 versions'))
