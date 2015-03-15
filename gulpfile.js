@@ -12,6 +12,7 @@ gulp.task('scripts', function(){
     .pipe(plugins.concat('main.js'))
     .pipe(plugins.uglify())
     .pipe(plugins.rename('main.min.js'))
+    .pipe(gulp.dest('build/js'))
     .pipe(plugins.gzip())
     .pipe(plugins.sourcemaps.write())
     .pipe(gulp.dest('build/js'))
@@ -30,6 +31,7 @@ gulp.task('styles', function(){
     }))
     .pipe(plugins.autoprefixer('last 2 versions'))
     .pipe(plugins.rename('main.min.css'))
+    .pipe(gulp.dest('build/css'))
     .pipe(plugins.gzip())
     .pipe(plugins.sourcemaps.write())
     .pipe(gulp.dest('build/css'))
@@ -38,9 +40,8 @@ gulp.task('styles', function(){
 
 // HTML Task
 // Minify + Gzip HTML File
-gulp.task('html', function(){
+gulp.task('htmlpages', function(){
   gulp.src('**/*.html')
-    .pipe(plugins.minifyHTML)
     .pipe(plugins.gzip())
     .pipe(gulp.dest('build/'));
 });
@@ -59,7 +60,7 @@ gulp.task('image', function(){
 gulp.task('watch', function(){
   gulp.watch('js/*.js', ['scripts']);
   gulp.watch('css/**/*.styl', ['styles']);
-  gulp.watch('**/*.html').on('change', reload);
+  gulp.watch('**/*.html', ['htmlpages']).on('change',reload);
 });
 
 // BrowserSync
@@ -73,4 +74,4 @@ gulp.task('browser-sync', function(){
 });
 
 
-gulp.task('default', ['scripts','styles','html','watch','browser-sync']);
+gulp.task('default', ['scripts','styles','htmlpages','watch','browser-sync']);
