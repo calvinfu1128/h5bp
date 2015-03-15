@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
     plugins = require('gulp-load-plugins')(),
+    minifyHTML = require('gulp-minify-html'),
     browserSync = require('browser-sync'),
     reload = browserSync.reload;
 
@@ -42,6 +43,7 @@ gulp.task('styles', function(){
 // Minify + Gzip HTML File
 gulp.task('htmlpages', function(){
   gulp.src('**/*.html')
+    .pipe(minifyHTML())
     .pipe(plugins.gzip())
     .pipe(gulp.dest('build/'));
 });
@@ -60,18 +62,18 @@ gulp.task('image', function(){
 gulp.task('watch', function(){
   gulp.watch('js/*.js', ['scripts']);
   gulp.watch('css/**/*.styl', ['styles']);
-  gulp.watch('**/*.html', ['htmlpages']).on('change',reload);
+  gulp.watch('**/*.html', ['htmlpages']);
 });
 
 // BrowserSync
 // All Devices
 gulp.task('browser-sync', function(){
-  browserSync.init(['css/*.css','js/*.js'], {
+  browserSync.init(['css/*.css','js/*.js','**/*.html'], {
     server: {
       baseDir: './'
     }
   });
 });
 
-
+// Default gulp task in one go
 gulp.task('default', ['scripts','styles','htmlpages','watch','browser-sync']);
