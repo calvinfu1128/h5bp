@@ -42,7 +42,7 @@ gulp.task('styles', function(){
 // HTML Task
 // Minify + Gzip HTML File
 gulp.task('htmlpages', function(){
-  gulp.src('**/*.html')
+  gulp.src('*.html')
     .pipe(minifyHTML())
     .pipe(plugins.gzip())
     .pipe(gulp.dest('build/'));
@@ -58,10 +58,11 @@ gulp.task('image', function(){
 });
 
 // Watch Task
-// Watches JS
+// Watches JSs, CSSs, Images & HTMLs
 gulp.task('watch', function(){
   gulp.watch('js/*.js', ['scripts']);
   gulp.watch('css/**/*.styl', ['styles']);
+  gulp.watch('img/**/*', ['image']);
   gulp.watch('**/*.html', ['htmlpages']);
 });
 
