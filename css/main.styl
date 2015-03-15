@@ -6,8 +6,31 @@
 normalize-html5()
 normalize-base()
 
-p
-  +below(1000px)
-    color $primary-color
+rupture.base-font-size = 1em
+rupture.enable-em-breakpoints = true
+rupture.anti-overlap = 1px 0.0625em 0.0625rem
 
-t-headers(helvetica)
+html
+  font-family JosefinSans-Light
+
+.navbar
+  background $primary-color
+  color $secondary-font-color
+  height 4em
+  width 100%
+  display flex
+
+.logo-area
+  font-family Voga-Medium
+  font-size 3em
+  letter-spacing 0.1em
+  fb(row,1,flex-start,center)
+  width 50%
+  position relative
+  left 10px
+
+.menu
+  fb(row,2,flex-end,center)
+  width 50%
+  position relative
+  right 10px
