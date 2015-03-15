@@ -53,7 +53,7 @@ gulp.task('htmlpages', function(){
 // Compress
 gulp.task('image', function(){
   gulp.src('img/*')
-    .pipe(plugins.imagemin())
+    .pipe(plugins.imagemin({progress: true}))
     .pipe(gulp.dest('build/img'));
 });
 
