@@ -7,19 +7,20 @@ normalize-html5()
 normalize-base()
 
 rupture.base-font-size = 1em
-rupture.enable-em-breakpoints = true
 rupture.anti-overlap = 1px 0.0625em 0.0625rem
+rupture.scale-names = 'xs' 's' 'm' 'l' 'xl' 'hd'
 
 html
   font-family: brandon-grotesque
   color: $primary-text
 
+li
+  list-style: none
+  display: inline-block
+
 .align-left
   position: relative
   left: 16px
-
-.fa-circle
-  color: $accent-color
 
 .navbar
   background: $primary-color
@@ -43,7 +44,16 @@ html
   position: relative
 
 .menu-normal
-  hide()
+  position: relative
+  right: 16px
+  li
+    margin-left: 3em
+  +below('s')
+    hide()
+
+.menu-mobile
+  +above('s')
+    hide()
 
 .menu-toggle
   background: $accent-color
