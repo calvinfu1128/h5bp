@@ -14,6 +14,12 @@ html
   font-family: brandon-grotesque, sans-serif
   color: $primary-text
 
+h1, h2, h3, h4, h5, h6
+  margin-top: 0
+  margin-bottom: 0
+  padding-top: 5px
+  padding-bottom: 5px
+
 li
   list-style: none
   display: inline-block
@@ -139,13 +145,16 @@ hr
   transition-delay: 0, 0.3s
 
 .menu-mobile-items
-  background: rgba($light-primary-color, 0.5)
+  background: $light-primary-color
   width: 100%
   margin: 0
   padding-left: 0
   display: flex
   flex-direction: column
+  display: none
+  visibility: hidden
   z-index: 99
+  transition: visibility 2s ease
   li
     color: $secondary-text
     width: 100%
@@ -154,7 +163,10 @@ hr
     align-items: center
     justify-content: center
 
+.menu-mobile-items.show
+  display: block
+  visibility: visible
+  transition: visibility 2s ease
+
 main
   background: $primary-color
-  h3
-    margin: 0
