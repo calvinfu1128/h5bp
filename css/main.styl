@@ -11,54 +11,109 @@ rupture.enable-em-breakpoints = true
 rupture.anti-overlap = 1px 0.0625em 0.0625rem
 
 html
-  font-family brandon-grotesque
-  color $primary-text
+  font-family: brandon-grotesque
+  color: $primary-text
+
+.align-left
+  position: relative
+  left: 16px
 
 .fa-circle
-  color $accent-color
+  color: $accent-color
 
 .navbar
-  background $primary-color
-  color $text-color
-  height 4em
-  width 100%
-  display flex
-  z-index 999
+  background: $primary-color
+  color: $text-color
+  height: 4.8em
+  width: 100%
+  display: flex
+  z-index: 999
 
 .logo-area
-  font-family Voga-Medium
-  font-size 3em
-  letter-spacing 0.07em
+  font-family: Voga-Medium
+  font-size: 3.5em
+  letter-spacing: 0.07em
   fb(row,1,flex-start,center)
-  width 50%
-  position relative
-  .brand-name
-    position relative
-    left 16px
+  width: 50%
+  position: relative
 
 .menu
   fb(row,2,flex-end,center)
-  width 50%
-  position relative
+  width: 50%
+  position: relative
 
 .menu-normal
   hide()
 
-.menu-toggle span
-  right 16px
+.menu-toggle
+  background: $accent-color
+  box-shadow: 0 3px 10px rgba(#000, 0.23)
+  width: 45px
+  height: 45px
+  border-radius: 50%
+  margin: 0
+  padding: 0
+  display: block
+  position: relative
+  right: 16px
+  border: none
+  overflow: hidden
+  cursor: pointer
+  transition: background 0.3s
 
-.menu-toggle span, .menu-toggle span:before, .menu-toggle span:after
-  background $text-color
-  height 0.26em
-  width 1.8em
-  border-radius 1px
-  display block
-  position absolute
-  cursor pointer
-  content ''
+.menu-toggle:focus
+  outline: none
+
+.menu-toggle span
+  background: $text-color
+  height: 0.23em
+  width: 2.2em
+  left: 10.35px
+  border-radius: 1px
+  display: block
+  position: absolute
+
+.menu-toggle span:before, .menu-toggle span:after
+  background: $text-color
+  height: 0.23em
+  width: 2.2em
+  border-radius: 1px
+  display: block
+  position: absolute
+  content: ''
 
 .menu-toggle span:before
-  top -10px
+  top: -9px
 
 .menu-toggle span:after
-  bottom -10px
+  bottom: -9px
+
+.menu-toggle span
+  transition: background 0 0.3s
+
+.menu-toggle span:before, .menu-toggle span:after
+  transition-duration: 0.3s, 0.3s
+  transition-delay: 0.3s, 0
+
+.menu-toggle span:before
+  transition-property: top, transform
+
+.menu-toggle span:after
+  transition-property: bottom, transform
+
+.menu-toggle.active
+  background: $dark-primary-color
+
+.menu-toggle.active span
+  background: none
+
+.menu-toggle.active span:before
+  top: 0
+  transform: rotate(45deg)
+
+.menu-toggle.active span:after
+  bottom: 0
+  transform: rotate(-45deg)
+
+.menu-toggle.active span:before, .menu-toggle.active span:after
+  transition-delay: 0, 0.3s
