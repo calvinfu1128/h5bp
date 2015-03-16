@@ -18,9 +18,18 @@ li
   list-style: none
   display: inline-block
 
+hr
+  border-color: $divider-color
+
 .align-left
   position: relative
-  left: 16px
+  padding-left: 16px
+
+.container
+  padding-left: 16px
+  padding-right: 16px
+  margin-left: auto
+  margin-right: auto
 
 .navbar
   background: $dark-primary-color
@@ -32,7 +41,7 @@ li
 
 .logo-area
   font-family: Voga-Medium
-  font-size: 3.5em
+  font-size: 3.7em
   letter-spacing: 0.07em
   fb(row,1,flex-start,center)
   width: 50%
@@ -52,6 +61,7 @@ li
     hide()
 
 .menu-mobile
+  padding-right: 16px
   +above('s')
     hide()
 
@@ -61,12 +71,9 @@ li
   width: 45px
   height: 45px
   border-radius: 50%
-  margin: 0
-  padding: 0
   display: block
   flex-direction: column
   position: relative
-  right: 16px
   border: none
 
   cursor: pointer
@@ -131,3 +138,23 @@ li
 .menu-toggle.active span:before, .menu-toggle.active span:after
   transition-delay: 0, 0.3s
 
+.menu-mobile-items
+  background: rgba($light-primary-color, 0.5)
+  width: 100%
+  margin: 0
+  padding-left: 0
+  display: flex
+  flex-direction: column
+  z-index: 99
+  li
+    color: $secondary-text
+    width: 100%
+    height: 3em
+    display: flex
+    align-items: center
+    justify-content: center
+
+main
+  background: $primary-color
+  h3
+    margin: 0
