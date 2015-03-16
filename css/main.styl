@@ -23,24 +23,42 @@ html
   height 4em
   width 100%
   display flex
+  z-index 999
 
 .logo-area
   font-family Voga-Medium
   font-size 3em
-  letter-spacing 0.1em
+  letter-spacing 0.07em
   fb(row,1,flex-start,center)
   width 50%
   position relative
-  left 10px
+  .brand-name
+    position relative
+    left 16px
 
 .menu
   fb(row,2,flex-end,center)
   width 50%
   position relative
-  right 10px
 
 .menu-normal
   hide()
 
-img
-  width 100%
+.menu-toggle span
+  right 16px
+
+.menu-toggle span, .menu-toggle span:before, .menu-toggle span:after
+  background $text-color
+  height 0.26em
+  width 1.8em
+  border-radius 1px
+  display block
+  position absolute
+  cursor pointer
+  content ''
+
+.menu-toggle span:before
+  top -10px
+
+.menu-toggle span:after
+  bottom -10px
