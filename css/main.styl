@@ -26,6 +26,8 @@ h1, h2, h3, h4, h5, h6
 /* p tag styles */
 p
   color: $secondary-text
+  margin-top: 0
+  margin-bottom: 0
 
 /* remove dots & make inline-block for nav items display */
 li
@@ -51,7 +53,7 @@ hr
 
 /* top nav bar CSS styles */
 .navbar
-  background: $dark-primary-color
+  background: #fff
   color: $text-color
   height: 4.8em
   width: 100%
@@ -61,12 +63,17 @@ hr
 
 /* LHS of nav bar is logo-area */
 .logo-area
+  color: $primary-color
   font-family: Voga-Medium
   font-size: 3.7em
   letter-spacing: 0.07em
   fb(row,1,flex-start,center)
   width: 50%
   position: relative
+
+.logo-png
+  width: 45px
+  height: 45px
 
 /* RHS of nav bar is menu */
 .menu
@@ -76,6 +83,7 @@ hr
 
 /* menu-normal only displays above 600px */
 .menu-normal
+  color: $accent-color
   position: relative
   right: 16px
   li
@@ -168,7 +176,7 @@ hr
 
 /* mobile menu items CSS styles */
 .menu-mobile-items
-  background: rgba($primary-text, 0.92)
+  background: rgba($dark-primary-color, 0.93)
   width: 200%
   margin: 0
   padding-left: 0
@@ -195,5 +203,11 @@ hr
 
 main
   background: $primary-color
+  position: relative
+  top: 4.8em
+  padding-bottom: 1em
+
+footer
+  background: $light-primary-color
   position: relative
   top: 4.8em
