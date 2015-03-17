@@ -130,16 +130,18 @@ hr
   transition-property: bottom, transform
 
 .menu-toggle.active
-  background: $dark-primary-color
+  background: #fff
 
 .menu-toggle.active span
   background: none
 
 .menu-toggle.active span:before
+  background: $accent-color
   top: 0
   transform: rotate(45deg)
 
 .menu-toggle.active span:after
+  background: $accent-color
   bottom: 0
   transform: rotate(-45deg)
 
