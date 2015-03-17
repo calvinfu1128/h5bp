@@ -17,8 +17,8 @@ html
 h1, h2, h3, h4, h5, h6
   margin-top: 0
   margin-bottom: 0
-  padding-top: 5px
-  padding-bottom: 5px
+  padding-top: 10px
+  padding-bottom: 10px
 
 li
   list-style: none
@@ -26,6 +26,8 @@ li
 
 hr
   border-color: $divider-color
+  margin: 0
+  padding: 0
 
 .align-left
   position: relative
@@ -145,8 +147,8 @@ hr
   transition-delay: 0, 0.3s
 
 .menu-mobile-items
-  background: $light-primary-color
-  width: 100%
+  background: rgba($primary-text, 0.92)
+  width: 200%
   margin: 0
   padding-left: 0
   display: flex
@@ -155,9 +157,11 @@ hr
   visibility: hidden
   z-index: 99
   transition: visibility 2s ease
+  position: absolute
+  top: 4.8em
+  left: -100%
   li
-    color: $secondary-text
-    width: 100%
+    color: $accent-color
     height: 3em
     display: flex
     align-items: center
