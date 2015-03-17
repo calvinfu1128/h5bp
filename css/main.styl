@@ -6,20 +6,24 @@
 normalize-html5()
 normalize-base()
 
+/* setting for Rupture breakpoints */
 rupture.base-font-size = 1em
 rupture.anti-overlap = 1px 0.0625em 0.0625rem
 rupture.scale-names = 'xs' 's' 'm' 'l' 'xl' 'hd'
 
+/* generic html tags CSS styles */
 html
   font-family: brandon-grotesque, sans-serif
   color: $primary-text
 
+/* reset the margins & paddings for headings */
 h1, h2, h3, h4, h5, h6
   margin-top: 0
   margin-bottom: 0
   padding-top: 10px
   padding-bottom: 10px
 
+/* remove dots & make inline-block for nav items display */
 li
   list-style: none
   display: inline-block
@@ -29,16 +33,19 @@ hr
   margin: 0
   padding: 0
 
+/* make content starts with space on the left */
 .align-left
   position: relative
   padding-left: 16px
 
+/* container leaving spaces on both left & right */
 .container
   padding-left: 16px
   padding-right: 16px
   margin-left: auto
   margin-right: auto
 
+/* top nav bar CSS styles */
 .navbar
   background: $dark-primary-color
   color: $text-color
@@ -47,6 +54,7 @@ hr
   display: flex
   z-index: 999
 
+/* LHS of nav bar is logo-area */
 .logo-area
   font-family: Voga-Medium
   font-size: 3.7em
@@ -55,11 +63,13 @@ hr
   width: 50%
   position: relative
 
+/* RHS of nav bar is menu */
 .menu
   fb(row,2,flex-end,center)
   width: 50%
   position: relative
 
+/* menu-normal only displays above 600px */
 .menu-normal
   position: relative
   right: 16px
@@ -68,11 +78,13 @@ hr
   +below('s')
     hide()
 
+/* menu-mobile only displays below 600px */
 .menu-mobile
   padding-right: 16px
   +above('s')
     hide()
 
+/* button for toggling mobile menu items */
 .menu-toggle
   background: $accent-color
   box-shadow: 0 3px 10px rgba(#000, 0.23)
@@ -83,13 +95,13 @@ hr
   flex-direction: column
   position: relative
   border: none
-
   cursor: pointer
   transition: background 0.3s
 
 .menu-toggle:focus
   outline: none
 
+/* the bars for the menu toggle button */
 .menu-toggle span
   background: $text-color
   height: 3px
@@ -116,6 +128,7 @@ hr
 .menu-toggle span:after
   bottom: -9px
 
+/* transition effects for the menu toggle button */
 .menu-toggle span
   transition: background 0 0.3s
 
@@ -148,6 +161,7 @@ hr
 .menu-toggle.active span:before, .menu-toggle.active span:after
   transition-delay: 0, 0.3s
 
+/* mobile menu items CSS styles */
 .menu-mobile-items
   background: rgba($primary-text, 0.92)
   width: 200%
