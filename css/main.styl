@@ -20,8 +20,6 @@ html
 a
   color: $dark-primary-color
   text-decoration: none
-  :hover
-    color: $accent-color
 
 /* reset the margins & paddings for headings */
 h1, h2, h3, h4, h5, h6
@@ -90,6 +88,11 @@ hr
   right: 16px
   li
     margin-left: 3em
+    a
+      padding: 0.1em
+      :hover
+        color: $accent-color
+        border-bottom: 2px solid $accent-color
   +below('s')
     hide()
 
