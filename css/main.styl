@@ -81,6 +81,7 @@ hr
   width: 100%
   max-width: 1600px
   display: flex
+  align-items: center
   position: fixed
   z-index: 999
 
@@ -90,7 +91,10 @@ hr
   font-family: Voga-Medium
   font-size: 3.7em
   letter-spacing: 0.07em
-  fb(row,1,flex-start,center)
+  display: flex
+  order: 1
+  align-items: center
+  justify-content: flex-start
   width: 50%
   position: relative
 
@@ -101,7 +105,9 @@ hr
 /* RHS of nav bar is menu */
 .menu
   letter-spacing: 0.035em
-  fb(row,2,flex-end,center)
+  display: flex
+  order: 2
+  justify-content: flex-end
   width: 50%
   position: relative
 
@@ -137,11 +143,10 @@ hr
 .menu-toggle
   background: $accent-color
   box-shadow: 0 3px 10px rgba(#000, 0.23)
-  width: 45px
-  height: 45px
+  width: 40px
+  height: 40px
   border-radius: 50%
-  display: block
-  flex-direction: column
+  display: flex
   position: relative
   border: none
   cursor: pointer
@@ -153,18 +158,18 @@ hr
 /* the bars for the menu toggle button */
 .menu-toggle span
   background: $text-color
-  height: 3px
-  width: 25px
+  height: 2px
+  width: 22px
   border-radius: 1px
   display: block
   position: absolute
-  top: 21px
-  left: 10px
+  top: 19px
+  left: 9px
 
 .menu-toggle span:before, .menu-toggle span:after
   background: $text-color
-  height: 3px
-  width: 25px
+  height: 2px
+  width: 22px
   border-radius: 1px
   display: block
   position: absolute
@@ -172,10 +177,10 @@ hr
   content: ''
 
 .menu-toggle span:before
-  top: -9px
+  top: -8px
 
 .menu-toggle span:after
-  bottom: -9px
+  bottom: -8px
 
 /* transition effects for the menu toggle button */
 .menu-toggle span
