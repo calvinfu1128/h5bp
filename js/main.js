@@ -7,7 +7,8 @@ $(document).ready(function(){
   });
 
   // about sectio slide up effect
-  $('.about-content')
-    .velocity("transition.slideUpIn", { stagger: 200, duration: 800 }
-  );
+  // $('.about-content')
+  //   .velocity("transition.slideUpIn", { stagger: 200, duration: 800 }
+  // );
+
 });
