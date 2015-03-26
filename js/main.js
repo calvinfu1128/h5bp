@@ -10,5 +10,12 @@ $(document).ready(function(){
   // $('.about-content')
   //   .velocity("transition.slideUpIn", { stagger: 200, duration: 800 }
   // );
+  $(window).scroll(function(){
+    var y = $(this).scrollTop();
+    if ( y >= 300 ) {
+      $('.about-content').css('top', 0);
+      console.log("test");
+    }
+  })
 
 });
