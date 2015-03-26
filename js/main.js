@@ -13,7 +13,8 @@ $(document).ready(function(){
   $(window).scroll(function(){
     var y = $(this).scrollTop();
     if ( y >= 300 ) {
-      $('.about-content').css('top', 0);
+      // $('.about-content').css('top', 0);
+      $('.about-content').addClass('slide-up-in');
       console.log("test");
     }
   })
