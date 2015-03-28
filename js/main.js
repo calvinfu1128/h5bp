@@ -13,9 +13,10 @@ $(document).ready(function(){
   $(window).scroll(function(){
     var y = $(this).scrollTop();
     if ( y >= 30 ) {
-      // $('.about-content').css('top', 0);
+      $('.navbar').removeClass('navbar-color').addClass('navbar-transparent');
       $('.about-content').addClass('slide-up-in');
-      console.log("test");
+    } else {
+      $('.navbar').removeClass('navbar-transparent').addClass('navbar-color');
     }
   })
 
