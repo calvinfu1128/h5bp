@@ -91,6 +91,7 @@ hr
 
 .navbar-color
   background: #fff
+
 .navbar-transparent
   background: rgba($primary-text, 0.8)
 
@@ -296,7 +297,7 @@ main
     justify-content: center
     position: relative
     top: 300px
-    transition: top 1000ms ease-in-out
+    // transition: top 1000ms ease-in-out
     div
       height: 100%
       display: flex
@@ -304,6 +305,10 @@ main
       justify-content: center
       h3
         color: $accent-color
+
+for i in (2..5)
+  .about-content:nth-child({i})
+    transition: top 1s ease-in-out (0.1s*(i))
 
 .services
   background: #e91e63
